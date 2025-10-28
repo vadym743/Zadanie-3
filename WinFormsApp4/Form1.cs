@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace WinFormsApp4
@@ -23,12 +23,12 @@ namespace WinFormsApp4
                 double laczna = calc.ObliczLacznaObjetosc();
                 double czysta = calc.ObliczCzystaSubstancje();
 
-                textBoxWynik.Text = $"??czna obj?to?? p?ynu: {laczna} ml\n" +
-                                    $"Obj?to?? czystej substancji: {czysta:F2} ml";
+                textBoxWynik.Text = $"Łączna objętość płynu: {laczna} ml\n" +
+                                    $"Objętość czystej substancji: {czysta:F2} ml";
             }
             catch
             {
-                MessageBox.Show("Wprowad? poprawne dane liczbowe!", "B??d", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Wprowadź poprawne dane liczbowe!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
