@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            buttonOblicz = new Button();
             textBoxProcent = new TextBox();
             textBoxLiczba = new TextBox();
             textBoxPojemnosc = new TextBox();
@@ -39,19 +39,21 @@
             labelWynikczysta = new Label();
             SuspendLayout();
             // 
-            // button1
+            // buttonOblicz
             // 
-            button1.Location = new Point(566, 156);
-            button1.Name = "button1";
-            button1.Size = new Size(141, 105);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            buttonOblicz.Location = new Point(566, 156);
+            buttonOblicz.Name = "buttonOblicz";
+            buttonOblicz.Size = new Size(141, 105);
+            buttonOblicz.TabIndex = 0;
+            buttonOblicz.Text = "Obliсz";
+            buttonOblicz.UseVisualStyleBackColor = true;
+            buttonOblicz.Click += buttonOblicz_Click;
             // 
             // textBoxProcent
             // 
             textBoxProcent.Location = new Point(216, 156);
             textBoxProcent.Name = "textBoxProcent";
+            textBoxProcent.PlaceholderText = "%";
             textBoxProcent.Size = new Size(125, 27);
             textBoxProcent.TabIndex = 1;
             // 
@@ -59,6 +61,7 @@
             // 
             textBoxLiczba.Location = new Point(400, 156);
             textBoxLiczba.Name = "textBoxLiczba";
+            textBoxLiczba.PlaceholderText = "999";
             textBoxLiczba.Size = new Size(125, 27);
             textBoxLiczba.TabIndex = 2;
             // 
@@ -66,6 +69,7 @@
             // 
             textBoxPojemnosc.Location = new Point(34, 156);
             textBoxPojemnosc.Name = "textBoxPojemnosc";
+            textBoxPojemnosc.PlaceholderText = "ml";
             textBoxPojemnosc.Size = new Size(125, 27);
             textBoxPojemnosc.TabIndex = 3;
             // 
@@ -92,25 +96,25 @@
             label3.AutoSize = true;
             label3.Location = new Point(400, 113);
             label3.Name = "label3";
-            label3.Size = new Size(50, 20);
+            label3.Size = new Size(39, 20);
             label3.TabIndex = 6;
-            label3.Text = "label3";
+            label3.Text = "Ilosc";
             // 
             // labelWyniklaczna
             // 
             labelWyniklaczna.AutoSize = true;
             labelWyniklaczna.Location = new Point(34, 198);
             labelWyniklaczna.Name = "labelWyniklaczna";
-            labelWyniklaczna.Size = new Size(0, 20);
+            labelWyniklaczna.Size = new Size(158, 20);
             labelWyniklaczna.TabIndex = 7;
             labelWyniklaczna.Text = "Łączna objętość płynu:";
-			// 
-			// labelWynikczysta
-			// 
-			labelWynikczysta.AutoSize = true;
+            // 
+            // labelWynikczysta
+            // 
+            labelWynikczysta.AutoSize = true;
             labelWynikczysta.Location = new Point(34, 241);
             labelWynikczysta.Name = "labelWynikczysta";
-            labelWynikczysta.Size = new Size(50, 20);
+            labelWynikczysta.Size = new Size(188, 20);
             labelWynikczysta.TabIndex = 8;
             labelWynikczysta.Text = "Objętość czystej substancji:";
             // 
@@ -127,7 +131,7 @@
             Controls.Add(textBoxPojemnosc);
             Controls.Add(textBoxLiczba);
             Controls.Add(textBoxProcent);
-            Controls.Add(button1);
+            Controls.Add(buttonOblicz);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -136,7 +140,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button buttonOblicz;
         private TextBox textBoxProcent;
         private TextBox textBoxLiczba;
         private TextBox textBoxPojemnosc;

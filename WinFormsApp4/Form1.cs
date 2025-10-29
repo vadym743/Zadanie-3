@@ -23,16 +23,14 @@ namespace WinFormsApp4
                 double laczna = calc.ObliczLacznaObjetosc();
                 double czysta = calc.ObliczCzystaSubstancje();
 
-				labelWyniklaczna.Text = $"Łączna objętość płynu: {laczna} ml\n";
-				labelWynikczysta.Text = $"Objętość czystej substancji: {czysta} ml";
+                labelWyniklaczna.Text = $"Łączna objętość płynu: {laczna} ml\n";
+                labelWynikczysta.Text = $"Objętość czystej substancji: {czysta} ml";
 
-			}
+            }
             catch
             {
                 MessageBox.Show("Wprowadź poprawne dane liczbowe!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-       
     }
 }
