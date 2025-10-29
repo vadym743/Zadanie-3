@@ -15,22 +15,35 @@ namespace WinFormsApp4
             try
             {
                 double pojemnosc = double.Parse(textBoxPojemnosc.Text);
-                double procent = double.Parse(textBoxProcent.Text);
-                int liczba = int.Parse(textBoxLiczba.Text);
+                double percent = double.Parse(textBoxPercent.Text);
+                int ilosc = int.Parse(textBoxIlosc.Text);
 
-                SolutionCalculator calc = new SolutionCalculator(pojemnosc, procent, liczba);
+                // ✅ Проверка процента (новая логика)
+                if (percent < 0 || percent > 100)
+                {
+                    MessageBox.Show("Błąd: procentowa zawartość musi być w zakresie 0–100%.",
+                                    "Niepoprawna wartość",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                    return;
+                }
 
+                SolutionCalculator calc = new SolutionCalculator(pojemnosc, percent, ilosc);
                 double laczna = calc.ObliczLacznaObjetosc();
-                double czysta = calc.ObliczCzystaSubstancje();
+                double czysta = calc.ObliczObjetoscSubstancji();
 
-                labelWyniklaczna.Text = $"Łączna objętość płynu: {laczna} ml\n";
-                labelWynikczysta.Text = $"Objętość czystej substancji: {czysta} ml";
-
+                labelWynikLaczna.Text = $"{laczna} ml";
+                labelWynikCzysta.Text = $"{czysta} ml";
             }
             catch
             {
-                MessageBox.Show("Wprowadź poprawne dane liczbowe!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Niepoprawne dane! Upewnij się, że pola są wypełnione liczbami.",
+                                "Błąd",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
+
     }
+}
 }
